@@ -1,2 +1,2 @@
 project_id = "recruiting-fulya-g"
-region = "europe-west3"
+region     = "europe-west3"

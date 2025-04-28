@@ -10,7 +10,7 @@ terraform {
     organization = "fulya-demo"
 
     workspaces {
-      name = "fulya-workspace"
+      name = "fulya-demo-ws"
     }
   }
 }

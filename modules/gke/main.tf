@@ -29,13 +29,29 @@ resource "google_container_cluster" "main" {
       disabled = false
     }
   }
+
+  cluster_autoscaling {
+    enabled = true
+
+    resource_limits {
+      resource_type = "cpu"
+      minimum       = 1
+      maximum       = 8
+    }
+
+    resource_limits {
+      resource_type = "memory"
+      minimum       = 1
+      maximum       = 32
+    }
+  }
 }
 
 
 resource "google_container_node_pool" "main" {
-  name       = "gke-pool"
-  location   = var.region
-  cluster    = google_container_cluster.primary.name
+  name     = "gke-pool"
+  location = var.region
+  cluster  = google_container_cluster.main.name
 
   node_config {
     machine_type = var.machine_type

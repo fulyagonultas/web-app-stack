@@ -4,3 +4,6 @@ variable "subnet" {}
 variable "machine_type" {
   default = "e2-medium"
 }
+variable "project_id" {
+  description = "Project ID"
+}

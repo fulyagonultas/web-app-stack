@@ -1,4 +1,4 @@
 variable "project_id" {
-    description = "value"
+  description = "Project  ID"
 }
 variable "region" {}

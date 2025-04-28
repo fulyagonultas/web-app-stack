@@ -1,22 +1,29 @@
-module "networking" {
-  source      = "./modules/networking"
+module "vpc" {
+  source      = "./modules/vpc"
   region      = var.region
   subnet_cidr = "10.10.0.0/24"
 }
 
 module "gcs" {
-  source = "./modules/gcs"
-  region = var.region
-}
-
-module "iam" {
-  source = "./modules/iam"
+  project_id = var.project_id
+  source     = "./modules/gcs"
+  region     = var.region
 }
 
 module "gke" {
   source       = "./modules/gke"
+  project_id   = var.project_id
   region       = var.region
-  network      = module.networking.network_name
-  subnet       = module.networking.subnet_name
+  network      = module.vpc.network_name
+  subnet       = module.vpc.subnet_name
   machine_type = "e2-medium"
+}
+
+module "k8s" {
+  source                 = "./k8s"
+  region                 = var.region
+  project_id             = var.project_id
+  cluster_endpoint       = "https://${module.gke.endpoint}"
+  cluster_ca_certificate = module.gke.cluster_ca_certificate
+  token                  = module.gke.token
 }

@@ -8,6 +8,8 @@ resource "google_compute_subnetwork" "subnet" {
   ip_cidr_range = var.subnet_cidr
   region        = var.region
   network       = google_compute_network.vpc_network.id
+
+    private_ip_google_access = true
 }
 
 resource "google_compute_firewall" "allow_http" {
