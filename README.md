@@ -30,13 +30,12 @@ Ingress Controller: Exposes app publicly via HTTP(S) Load Balancer
 Security & IAM
 IAM roles follow least privilege principle
 
-Dedicated service account per module (GKE, Storage)
+Dedicated service account per module (Storage etc.)
 
-Explicit firewall rules and network tags
+Explicit firewall rules
 
 Observability
 GKE logging via logging.googleapis.com/kubernetes
 
 Metrics via monitoring.googleapis.com/kubernetes
 
-Supports dashboards, alerts, and log-based metrics
