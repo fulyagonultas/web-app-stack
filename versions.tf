@@ -1,5 +1,5 @@
 terraform {
-  required_version = ">= 1.8.5"
+  required_version = ">= 1.8.5, < 2.0.0"
   required_providers {
     google = {
       source  = "hashicorp/google"
@@ -10,7 +10,7 @@ terraform {
     organization = "fulya-demo"
 
     workspaces {
-      name = "fulya-demo-ws"
+      name = "fulya-webstack"
     }
   }
 }
