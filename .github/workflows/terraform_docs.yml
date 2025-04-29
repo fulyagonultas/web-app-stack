@@ -6,6 +6,9 @@ on:
       - '**.tf'
       - '**.tfvars'
  
+permissions:
+  contents: write
+
 jobs:
   terraform-docs:
     uses: fulyagonultas/terraform-workflows/.github/workflows/terraform_docs.yml@main

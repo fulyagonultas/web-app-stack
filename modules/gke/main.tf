@@ -1,3 +1,4 @@
+# Creates GKE Cluster
 resource "google_container_cluster" "main" {
   name                     = "gke-cluster"
   location                 = var.region
@@ -47,7 +48,7 @@ resource "google_container_cluster" "main" {
   }
 }
 
-
+# GKE Node Pool Configuration
 resource "google_container_node_pool" "main" {
   name     = "gke-pool"
   location = var.region
