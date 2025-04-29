@@ -15,6 +15,7 @@ This project provisions a **scalable, production-like web application infrastruc
 
 ### 2. **Clone the Repo**
 git clone https://github.com/your-org/gcp-webstack-terraform.git
+
 cd gcp-webstack-terraform
 
 
@@ -38,4 +39,7 @@ Observability
 GKE logging via logging.googleapis.com/kubernetes
 
 Metrics via monitoring.googleapis.com/kubernetes
+
+![Infrastructure Diagram](architecture.png)
+
 
