@@ -1,16 +1,21 @@
 variable "region" {
   description = "The GCP Region"
+  type        = string
 }
 variable "network" {
   description = "The VPC Network"
+  type        = string
 }
 variable "subnet" {
   description = "The VPC Subnetwork"
+  type        = string
 }
 variable "machine_type" {
-  description = "The Nodepool Machine Type"
   default     = "e2-medium"
+  description = "The Nodepool Machine Type"
+  type        = string
 }
 variable "project_id" {
   description = "The GCP Project ID"
+  type        = string
 }
