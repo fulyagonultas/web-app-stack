@@ -7,6 +7,6 @@ on:
       - '**.tfvars'
  
 jobs:
-  terraform-docs:
+  terraform-validate:
     uses: fulyagonultas/terraform-workflows/.github/workflows/terraform_validate.yml@main
     secrets: inherit
