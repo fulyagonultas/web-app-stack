@@ -1,4 +1,6 @@
 variable "project_id" {
-  description = "Project  ID"
+  description = "GCP Project  ID"
 }
-variable "region" {}
+variable "region" {
+  description = "GCP Region"
+}
