@@ -1,0 +1,12 @@
+name: "Terraform: Format Code"
+ 
+on:
+  push:
+    paths:
+      - '**.tf'
+      - '**.tfvars'
+ 
+jobs:
+  terraform-format:
+    uses: fulyagonultas/terraform-workflows/.github/workflows/terraform_fmt.yml@main
+    secrets: inherit

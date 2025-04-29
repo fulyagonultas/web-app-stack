@@ -1,0 +1,12 @@
+name: "Terraform: Lint code"
+ 
+on:
+  push:
+    paths:
+      - '**.tf'
+      - '**.tfvars'
+ 
+jobs:
+  terraform-lint:
+    uses: fulyagonultas/terraform-workflows/.github/workflows/terraform_lint.yml@main
+    secrets: inherit

@@ -1,0 +1,12 @@
+name: "Terraform: Generate Docs"
+ 
+on:
+  push:
+    paths:
+      - '**.tf'
+      - '**.tfvars'
+ 
+jobs:
+  terraform-docs:
+    uses: fulyagonultas/terraform-workflows/.github/workflows/terraform_docs.yml@main
+    secrets: inherit

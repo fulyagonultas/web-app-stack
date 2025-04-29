@@ -1,0 +1,12 @@
+name: "Terraform: Validate Code"
+ 
+on:
+  push:
+    paths:
+      - '**.tf'
+      - '**.tfvars'
+ 
+jobs:
+  terraform-docs:
+    uses: fulyagonultas/terraform-workflows/.github/workflows/terraform_validate.yml@main
+    secrets: inherit
