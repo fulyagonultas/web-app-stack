@@ -1,9 +1,11 @@
+# Creates a Kubernetes namespace
 resource "kubernetes_namespace" "example" {
   metadata {
     name = "example"
   }
 }
 
+# Deploys an NGINX deployment in the namespace
 resource "kubernetes_deployment" "http_example" {
   metadata {
     name      = "http-example"
@@ -62,6 +64,7 @@ resource "kubernetes_deployment" "http_example" {
   }
 }
 
+# Exposes the deployment as service within the cluster
 resource "kubernetes_service" "example_service" {
   metadata {
     name      = "example-service"
@@ -82,6 +85,7 @@ resource "kubernetes_service" "example_service" {
   }
 }
 
+# Defines an Ingress to expose the service externally
 resource "kubernetes_ingress_v1" "example_ingress" {
   metadata {
     name      = "example-ingress"
