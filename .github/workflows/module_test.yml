@@ -1,0 +1,12 @@
+name: "Automated Module Testing"
+on:
+  push:
+    paths:
+      - '**.tf'
+      - '**.tftest.hcl'
+
+jobs:
+  module-testing:
+    uses: terraform/terraform-workflows/.github/workflows/module-test.yml@main
+    secrets: inherit
+ 
