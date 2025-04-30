@@ -2,15 +2,15 @@ run "vpc_setup" {
   command = apply
 
   module {
-    source      = "../vpc"
+    source = "../vpc"
   }
 
-variables {
-  project_id   = "recruiting-fulya-g"
-  region       = "europe-west3"
-  subnet_cidr  = "10.10.0.0/24"
-  machine_type = "e2-medium"
-}
+  variables {
+    project_id   = "recruiting-fulya-g"
+    region       = "europe-west3"
+    subnet_cidr  = "10.10.0.0/24"
+    machine_type = "e2-medium"
+  }
 
   assert {
     condition     = runs.vpc_setup.outputs.network_name == "vpc"

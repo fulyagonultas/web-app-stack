@@ -5,7 +5,7 @@ variables {
 
 run "run-gcs-module" {
   module {
-    source     = "./"
+    source = "./"
   }
 
   assert {

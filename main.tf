@@ -1,6 +1,7 @@
 module "vpc" {
   source      = "./modules/vpc"
   region      = var.region
+  project_id  = var.project_id
   subnet_cidr = "10.10.0.0/24"
 }
 
