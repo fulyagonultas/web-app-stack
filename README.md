@@ -7,7 +7,7 @@ This project provisions a **scalable, production-like web application infrastruc
 ## Setup & Deployment
 
 ### 1. **Pre-requisites**
-- Terraform ≥ 1.10
+- Terraform >= 1.8.5, < 2.0.0
 - GCP Provider ≥ 6.x
 - A GCP project (e.g., `recruiting-fulya-g`)
 - A service account key with sufficient IAM permissions (as a TFC env var `GOOGLE_CREDENTIALS`)
