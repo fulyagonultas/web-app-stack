@@ -5,13 +5,7 @@ variables {
   project_id  = "recruiting-fulya-g"
 }
 
-provider "google" {
-  project = var.project_id
-  region  = var.region
-}
-
-
-run "run-module" {
+run "run-vpc-module" {
   module {
     source = "./"
   }
