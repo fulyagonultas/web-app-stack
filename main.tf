@@ -5,8 +5,8 @@ module "vpc" {
 }
 
 module "gcs" {
-  project_id = var.project_id
   source     = "./modules/gcs"
+  project_id = var.project_id
   region     = var.region
 }
 
