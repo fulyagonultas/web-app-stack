@@ -1,5 +1,6 @@
 # Create a custom VPC network
 resource "google_compute_network" "vpc_network" {
+
   name                    = "vpc"
   auto_create_subnetworks = false
 }
