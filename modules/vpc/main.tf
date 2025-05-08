@@ -8,6 +8,7 @@ resource "google_compute_network" "vpc_network" {
 # Create a subnet within the custom VPC
 # Enables Private Google Access so GKE nodes can reach Google APIs (e.g., GCS) without public IPs
 resource "google_compute_subnetwork" "subnet" {
+  project       = var.project_id
   name          = "subnet"
   ip_cidr_range = var.subnet_cidr
   region        = var.region
@@ -18,6 +19,7 @@ resource "google_compute_subnetwork" "subnet" {
 
 # Create a firewall rule to allow inbound HTTPS traffic (TCP port 443) from any IP
 resource "google_compute_firewall" "allow_https" {
+  project = var.project_id
   name    = "allow-https"
   network = google_compute_network.vpc_network.name
 
@@ -32,6 +34,7 @@ resource "google_compute_firewall" "allow_https" {
 
 # Create a Cloud Router to be used by Cloud NAT
 resource "google_compute_router" "nat_router" {
+  project = var.project_id
   name    = "nat-router"
   network = google_compute_network.vpc_network.id
   region  = var.region
@@ -39,6 +42,7 @@ resource "google_compute_router" "nat_router" {
 
 # Configure Cloud NAT to allow private GKE nodes to access the internet
 resource "google_compute_router_nat" "cloud_nat" {
+  project                            = var.project_id
   name                               = "cloud-nat"
   router                             = google_compute_router.nat_router.name
   region                             = var.region

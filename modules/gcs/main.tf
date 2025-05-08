@@ -12,6 +12,7 @@ resource "random_id" "bucket_suffix" {
 
 # Service Account Creation with Storage Object User role for writing logs to the bucket and retrieve assets from the bucket
 resource "google_service_account" "object_user" {
+  project = var.project_id
   account_id   = "gcs-access"
   display_name = "App Access to GCS Bucket"
 }
