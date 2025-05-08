@@ -81,7 +81,7 @@ resource "kubernetes_service" "example_service" {
       target_port = 80
     }
 
-    type = "ClusterIP"
+    type = "LoadBalancer"
   }
 }
 
