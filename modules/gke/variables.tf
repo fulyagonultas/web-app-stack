@@ -23,3 +23,8 @@ variable "project_id" {
   description = "The GCP Project ID"
   type        = string
 }
+
+variable "node_service_account_email" {
+  description = "Service Account Email used by GKE nodes"
+  type        = string
+}

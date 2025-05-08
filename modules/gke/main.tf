@@ -58,7 +58,7 @@ resource "google_container_node_pool" "main" {
 
   node_config {
     machine_type    = var.machine_type
-    service_account = module.gcs.service_account_email
+    service_account = var.node_service_account_email
     oauth_scopes = [
       "https://www.googleapis.com/auth/cloud-platform"
     ]

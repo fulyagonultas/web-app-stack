@@ -18,6 +18,7 @@ module "gke" {
   network      = module.vpc.network_name
   subnet       = module.vpc.subnet_name
   machine_type = "e2-medium"
+  node_service_account_email = module.gcs.service_account_email
 }
 
 module "k8s" {
