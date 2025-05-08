@@ -12,12 +12,12 @@ module "gcs" {
 }
 
 module "gke" {
-  source       = "./modules/gke"
-  project_id   = var.project_id
-  region       = var.region
-  network      = module.vpc.network_name
-  subnet       = module.vpc.subnet_name
-  machine_type = "e2-medium"
+  source                     = "./modules/gke"
+  project_id                 = var.project_id
+  region                     = var.region
+  network                    = module.vpc.network_name
+  subnet                     = module.vpc.subnet_name
+  machine_type               = "e2-medium"
   node_service_account_email = module.gcs.service_account_email
 }
 
