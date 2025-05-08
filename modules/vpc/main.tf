@@ -17,7 +17,7 @@ resource "google_compute_subnetwork" "subnet" {
   private_ip_google_access = true
 }
 
-# Create a firewall rule to allow inbound HTTPS traffic (TCP port 443) from any IP
+# Create a firewall rule to allow inbound HTTP traffic (TCP port 443) from any IP
 resource "google_compute_firewall" "allow_https" {
   project = var.project_id
   name    = "allow-https"
@@ -25,7 +25,7 @@ resource "google_compute_firewall" "allow_https" {
 
   allow {
     protocol = "tcp"
-    ports    = ["443"]
+    ports    = ["80"]
   }
 
   source_ranges = ["0.0.0.0/0"]
